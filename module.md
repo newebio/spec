@@ -7,12 +7,12 @@
 1. Название модуля.
 2. Массив зависимостей модуля.
 3. Callback-функцию, в теле которой содержится, собственно, код.
-
-        define("l!~#name", ["npm!jquery@0.0.1#index"], function(require, exports, module, dependencies){
-            var $ = require(dependencies[0]);
-            $.get(...)
-        })
-    
+```javascript
+define("l!~#name", ["npm!jquery@0.0.1#index"], function(require, exports, module, dependencies){
+        var $ = require(dependencies[0]);
+        $.get(/*...*/).then(()=>{/*...*/});
+})
+```    
 Предполагается, что модули создаются не вручную, а с помощью различных упаковщиков.
 
 # Наименование модуля
