@@ -8,9 +8,11 @@
 2. Массив зависимостей модуля.
 3. Callback-функцию, в теле которой содержится, собственно, код.
 ```javascript
-define(".!.@.#.~*", ["npm",["jquery",["0.0.1",["index",["ajax"]]]]], function(dependencies, require, exports, module){
-        var $ = require(dependencies[0]);
-        $.get(/*...*/).then(()=>{/*...*/});
+define(".!.@.#.~*", ["npm",["jquery",["0.0.1",["index",["ajax", "default"]]]]], function(dependencies, require, exports, module){
+        var $ = require(dependencies[1]);
+        console.log($("#id1").html());
+        var jQueryGet = require(dependencies[0]);
+        jQueryGet(/*...*/).then(()=>{/*...*/});
 })
 ```    
 Предполагается, что модули создаются не вручную, а с помощью различных упаковщиков.
